@@ -12,7 +12,7 @@ public class Hooks extends Base{
 	@Before
 	public void setup() {
 		ChromeOptions option=new ChromeOptions();
-		//option.setHeadless(true);
+		option.setHeadless(true);
 		WebDriverManager.chromedriver().setup();
 		
 		driver=new ChromeDriver(option);
