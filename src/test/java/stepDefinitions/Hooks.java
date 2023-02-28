@@ -14,6 +14,7 @@ public class Hooks extends Base{
 		ChromeOptions option=new ChromeOptions();
 		//option.setHeadless(true);
 		WebDriverManager.chromedriver().setup();
+		
 		driver=new ChromeDriver(option);
 		
 		
