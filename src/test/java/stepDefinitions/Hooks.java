@@ -12,7 +12,7 @@ public class Hooks extends Base{
 	@Before
 	public void setup() {
 		ChromeOptions options=new ChromeOptions();
-		options.setHeadless(true);
+		//options.setHeadless(true);
 		options.addArguments("--headless");
 		options.addArguments("--disable-dev-shm-usage");
 		options.addArguments("--allow-insecure-localhost");
@@ -24,11 +24,21 @@ public class Hooks extends Base{
 		options.addArguments("--disable-gpu");
 		options.addArguments("--no-sandbox");
 		options.addArguments("--force-device-scale-factor=1");
-		
+		options.addArguments("test-type"); 
+		options.addArguments("no-sandbox"); 
 		
 		WebDriverManager.chromedriver().setup();
-		
+	//	PropertiesCollection.driver = new ChromeDriver(options)
 		driver=new ChromeDriver(options);
+		
+		
+		
+		;
+		
+		
+		
+		
+		
 		
 		
 	}
