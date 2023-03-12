@@ -2,6 +2,7 @@ package stepDefinitions;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 import base.Base;
 import io.cucumber.java.After;
@@ -11,21 +12,12 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class Hooks extends Base{
 	@Before
 	public void setup() {
+		
+		//DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 		ChromeOptions options=new ChromeOptions();
 		//options.setHeadless(true);
 		options.addArguments("--headless");
-		options.addArguments("--disable-dev-shm-usage");
-		options.addArguments("--allow-insecure-localhost");
-		options.addArguments("--window-size=1920,1080");
-		options.addArguments("start-maximized");
-		options.addArguments("enable-automation");
-		options.addArguments("--disable-infobars");
-		options.addArguments("--disable-browser-side-navigation");
-		options.addArguments("--disable-gpu");
-		options.addArguments("--no-sandbox");
-		options.addArguments("--force-device-scale-factor=1");
-		options.addArguments("test-type"); 
-		options.addArguments("no-sandbox"); 
+		options.setCapability("webdriver.remote.session.timeout", 300000);
 		
 		WebDriverManager.chromedriver().setup();
 	//	PropertiesCollection.driver = new ChromeDriver(options)
@@ -33,7 +25,7 @@ public class Hooks extends Base{
 		
 		
 		
-		;
+	
 		
 		
 		
