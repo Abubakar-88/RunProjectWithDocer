@@ -25,16 +25,16 @@ public class Hooks extends Base{
 		//JENKIN
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		driver = new RemoteWebDriver(capabilities);
-		//Capabilities actualCapabilities = ((RemoteWebDriver) driver).getCapabilities();
+		Capabilities actualCapabilities = ((RemoteWebDriver) driver).getCapabilities();
 	}
 	
-//		public String extractScreenShot(WebDriverException e) {
-//		  Throwable cause = e.getCause();
-//		  if (cause instanceof ScreenshotException) {
-//		    return ((ScreenshotException) cause).getBase64EncodedScreenshot();
-//		  }
-//               return null;
-//	}	
+		public String extractScreenShot(WebDriverException e) {
+		  Throwable cause = e.getCause();
+		  if (cause instanceof ScreenshotException) {
+		    return ((ScreenshotException) cause).getBase64EncodedScreenshot();
+		  }
+               return null;
+	}	
 	@After
 	public void tearDown() {
 		driver.close();
