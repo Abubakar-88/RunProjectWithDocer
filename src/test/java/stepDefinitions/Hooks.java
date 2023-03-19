@@ -21,11 +21,17 @@ public class Hooks extends Base{
 		ChromeOptions option = new ChromeOptions();
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver(option);
+		option.addArguments("--headless");
+		option.addArguments("--no-sandbox");
+		
+		
+		
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		//JENKIN
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		driver = new RemoteWebDriver(capabilities);
 		Capabilities actualCapabilities = ((RemoteWebDriver) driver).getCapabilities();
+		
 	}
 	
 		public String extractScreenShot(WebDriverException e) {
