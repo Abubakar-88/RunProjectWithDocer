@@ -3,6 +3,7 @@ package stepDefinitions;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Capabilities;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -18,20 +19,42 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class Hooks extends Base{
 	@Before
 	public void setup() {
-		ChromeOptions option = new ChromeOptions();
-		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver(option);
-		option.addArguments("--headless");
-		option.addArguments("--no-sandbox");
+//		ChromeOptions option = new ChromeOptions();
+//		WebDriverManager.chromedriver().setup();
+//		driver = new ChromeDriver(option);
+//		option.addArguments("--headless");
+//		option.addArguments("--no-sandbox");
+//		
+//		
+//		
+//		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//		//JENKIN
+//		DesiredCapabilities capabilities = new DesiredCapabilities();
+//		driver = new RemoteWebDriver(capabilities);
+//		Capabilities actualCapabilities = ((RemoteWebDriver) driver).getCapabilities();
+//		driver.get("https://www.google.com/");
+		
+		try {
+            // Set the path to the chromedriver executable
+            System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+
+            // Launch Chrome browser
+            WebDriver driver = new ChromeDriver();
+
+            // Navigate to a URL
+            driver.get("https://it.microtechlimited.com/");
+
+            // Close the browser
+           // driver.quit();
+        } catch (WebDriverException e) {
+            // Handle the exception
+            System.out.println("Chrome browser failed to start: " + e.getMessage());
+            e.printStackTrace();
+        }
 		
 		
 		
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		//JENKIN
-		DesiredCapabilities capabilities = new DesiredCapabilities();
-		driver = new RemoteWebDriver(capabilities);
-		Capabilities actualCapabilities = ((RemoteWebDriver) driver).getCapabilities();
-		driver.get("https://www.google.com/");
+		
 	}
 	
 		public String extractScreenShot(WebDriverException e) {
@@ -43,7 +66,7 @@ public class Hooks extends Base{
 	}	
 	@After
 	public void tearDown() {
-		//driver.close();
+		driver.close();
 	}
 
 }
