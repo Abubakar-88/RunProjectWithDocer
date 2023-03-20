@@ -26,13 +26,11 @@ public class Hooks extends Base{
 		option.addArguments("--headless");
 		option.addArguments("--no-sandbox");
 		
-		
-		
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		//JENKIN
-		DesiredCapabilities capabilities = new DesiredCapabilities();
-		driver = new RemoteWebDriver(capabilities);
-		Capabilities actualCapabilities = ((RemoteWebDriver) driver).getCapabilities();
+		//DesiredCapabilities capabilities = new DesiredCapabilities();
+	//	driver = new RemoteWebDriver(capabilities);
+	//	Capabilities actualCapabilities = ((RemoteWebDriver) driver).getCapabilities();
 		//driver.get("https://www.google.com/");
 		
 		
