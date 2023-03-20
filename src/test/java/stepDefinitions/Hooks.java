@@ -31,7 +31,7 @@ public class Hooks extends Base{
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		driver = new RemoteWebDriver(capabilities);
 		Capabilities actualCapabilities = ((RemoteWebDriver) driver).getCapabilities();
-		
+		driver.get("https://www.google.com/");
 	}
 	
 		public String extractScreenShot(WebDriverException e) {
@@ -43,7 +43,7 @@ public class Hooks extends Base{
 	}	
 	@After
 	public void tearDown() {
-		driver.close();
+		//driver.close();
 	}
 
 }
