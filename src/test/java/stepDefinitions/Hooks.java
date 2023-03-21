@@ -20,13 +20,13 @@ public class Hooks extends Base{
 	@Before
 	public void setup() {
 		try {
-			ChromeOptions option = new ChromeOptions();
-		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver(option);
-		option.addArguments("--headless");
-		option.addArguments("--no-sandbox");
-		
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		//	ChromeOptions option = new ChromeOptions();
+		//WebDriverManager.chromedriver().setup();
+		//driver = new ChromeDriver(option);
+		//option.addArguments("--headless");
+		//option.addArguments("--no-sandbox");
+	//	
+	//	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		//JENKIN
 		//DesiredCapabilities capabilities = new DesiredCapabilities();
 	//	driver = new RemoteWebDriver(capabilities);
@@ -35,10 +35,10 @@ public class Hooks extends Base{
 		
 		
             // Set the path to the chromedriver executable
-          //  System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+           System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 
             // Launch Chrome browser
-          //  WebDriver driver = new ChromeDriver();
+           WebDriver driver = new ChromeDriver();
 
             // Navigate to a URL
             driver.get("https://it.microtechlimited.com/");
