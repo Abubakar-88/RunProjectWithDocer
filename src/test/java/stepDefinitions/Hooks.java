@@ -40,7 +40,7 @@ public class Hooks extends Base{
          //  System.setProperty("webdriver.chrome.driver", "/home/ec2-user/chromedriver");
 
             // Launch Chrome browser
-         //  driver.get("https://it.microtechlimited.com/");
+           driver.get("https://it.microtechlimited.com/");
 
            
            
