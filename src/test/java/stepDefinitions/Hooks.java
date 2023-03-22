@@ -20,7 +20,7 @@ public class Hooks extends Base{
 	@Before
 	public void setup() {
 		 WebDriver driver = new ChromeDriver();
-		 System.setProperty("webdriver.chrome.driver", "/usr/bin/google-chrome");
+		 System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 			ChromeOptions option = new ChromeOptions();
 			option.addArguments("headless");
 		//WebDriverManager.chromedriver().setup();
