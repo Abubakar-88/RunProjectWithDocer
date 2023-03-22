@@ -24,11 +24,11 @@
 			<artifactId>selenium-java</artifactId>
 			<version>${selenium.version}</version>
 		</dependency>
-	<!---	<dependency>
+		<dependency>
 			<groupId>io.github.bonigarcia</groupId>
 			<artifactId>webdrivermanager</artifactId>
 			<version>${webdrivermanager.version}</version>
-		</dependency> -->
+		</dependency> 
 		<dependency><!--cucumber-java Dependencies -->
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-java</artifactId>
