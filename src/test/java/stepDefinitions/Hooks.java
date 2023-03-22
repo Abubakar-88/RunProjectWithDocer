@@ -20,9 +20,10 @@ public class Hooks extends Base{
 	@Before
 	public void setup() {
 		 WebDriver driver = new ChromeDriver();
-		try {
+		 System.setProperty("webdriver.chrome.driver", "/usr/bin/google-chrome");
 			ChromeOptions option = new ChromeOptions();
-		WebDriverManager.chromedriver().setup();
+			option.addArguments("headless");
+		//WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver(option);
 		//option.addArguments("--headless");
 		//option.addArguments("--no-sandbox");
@@ -36,35 +37,18 @@ public class Hooks extends Base{
 			// 
 		
             // Set the path to the chromedriver executable
-           System.setProperty("webdriver.chrome.driver", "/home/ec2-user/chromedriver");
+         //  System.setProperty("webdriver.chrome.driver", "/home/ec2-user/chromedriver");
 
             // Launch Chrome browser
-           driver.get("https://it.microtechlimited.com/");
+         //  driver.get("https://it.microtechlimited.com/");
 
-            // Navigate to a URL
-           // driver.get("");
-
-            // Close the browser
-           // driver.quit();
-        } catch (WebDriverException e) {
-            // Handle the exception
-//           System.out.println("Chrome browser failed to start: " + e.getMessage());
-//            e.printStackTrace();
-           if (e.getMessage().contains("chrome location /usr/bin/google-chrome")) {
-               System.out.println("ChromeDriver is assuming that Chrome has crashed.");
-                // Restart ChromeDriver and try again
-            //    driver.quit();
-               driver = new ChromeDriver();
-                driver.get("https://www.example.com");
-            } else {
-                // Handle other types of exceptions
-                System.out.println("WebDriverException occurred: " + e.getMessage());
+           
+           
             
             
-            
-          }
+     
          
-      }
+  
 		
     // chrome_options = Options();
 	
