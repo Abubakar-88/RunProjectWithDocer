@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.ScreenshotException;
@@ -19,12 +21,17 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class Hooks extends Base{
 	@Before
 	public void setup() {
-		 WebDriver driver = new ChromeDriver();
-		 System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-			ChromeOptions option = new ChromeOptions();
-			option.addArguments("headless");
-		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver(option);
+	//	 WebDriver driver = new ChromeDriver();
+		 System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
+		 FirefoxOptions options = new FirefoxOptions();
+	      options.addArguments("--headless");
+	      WebDriver driver = new FirefoxDriver(options);
+		 
+		 
+//			ChromeOptions option = new ChromeOptions();
+//			option.addArguments("headless");
+//		WebDriverManager.chromedriver().setup();
+//		driver = new ChromeDriver(option);
 		//option.addArguments("--headless");
 		//option.addArguments("--no-sandbox");
 	// driver.get("https://www.example.com");	
@@ -40,7 +47,7 @@ public class Hooks extends Base{
          //  System.setProperty("webdriver.chrome.driver", "/home/ec2-user/chromedriver");
 
             // Launch Chrome browser
-           driver.get("https://it.microtechlimited.com/");
+        //   driver.get("https://it.microtechlimited.com/");
 
            
            
@@ -56,13 +63,13 @@ public class Hooks extends Base{
 		
 	}
 	
-		public String extractScreenShot(WebDriverException e) {
-		  Throwable cause = e.getCause();
-		  if (cause instanceof ScreenshotException) {
-		    return ((ScreenshotException) cause).getBase64EncodedScreenshot();
-		  }
-               return null;
-	}	
+//		public String extractScreenShot(WebDriverException e) {
+//		  Throwable cause = e.getCause();
+//		  if (cause instanceof ScreenshotException) {
+//		    return ((ScreenshotException) cause).getBase64EncodedScreenshot();
+//		  }
+//               return null;
+//	}	
 	@After
 	public void tearDown() {
 		 driver.quit();
