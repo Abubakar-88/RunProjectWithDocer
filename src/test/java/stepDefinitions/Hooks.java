@@ -22,10 +22,11 @@ public class Hooks extends Base{
 	@Before
 	public void setup() {
 	//	 WebDriver driver = new ChromeDriver();
-		 System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
-		 FirefoxOptions options = new FirefoxOptions();
-	      options.addArguments("--headless");
-	      WebDriver driver = new FirefoxDriver(options);
+		System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+	     ChromeOptions options = new ChromeOptions();
+	      options.addArguments("--start-maximized");
+	   // Initialize the ChromeDriver with options
+	      WebDriver driver = new ChromeDriver(options);
 		 
 		 
 //			ChromeOptions option = new ChromeOptions();
