@@ -23,7 +23,7 @@ public class Hooks extends Base{
 		 System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 			ChromeOptions option = new ChromeOptions();
 			option.addArguments("headless");
-		//WebDriverManager.chromedriver().setup();
+		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver(option);
 		//option.addArguments("--headless");
 		//option.addArguments("--no-sandbox");
