@@ -13,7 +13,7 @@ public class Login_Functionality_Verification extends Base{
 	
 	@Given("I am in Landing Home Page")
 	public void i_am_in_Landing_Page() {
-		navigateURL("https://it.microtechlimited.com/index.html");
+		navigateURL("https://it.microtechlimited.com/");
 		String s = getText(By.xpath("//div//h1['Welcome to MicroTech NA.']"));
 		assertEquals("Welcome to MicroTech NA.", s);
 	}
