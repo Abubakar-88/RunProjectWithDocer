@@ -23,6 +23,7 @@ public class Hooks extends Base{
 	public void setup() {
 		
 		ChromeOptions option = new ChromeOptions();
+		options.addArguments("--remote-allow-any-origin");
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver(option);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -82,7 +83,9 @@ public class Hooks extends Base{
 //	}	
 	@After
 	public void tearDown() {
-		 driver.quit();
+		  if (driver != null) {
+                  driver.quit(); 
+                 }
 	}
 
 }
