@@ -22,11 +22,18 @@ public class Hooks extends Base{
 	@Before
 	public void setup() {
 		
-		ChromeOptions option = new ChromeOptions();
-		options.addArguments("--remote-allow-any-origin");
-		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver(option);
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+	     ChromeOptions options = new ChromeOptions();
+		 options.addArguments("--remote-allow-any-origin");
+	      options.addArguments("--start-maximized");
+	   // Initialize the ChromeDriver with options
+	      WebDriver driver = new ChromeDriver(options);
+		
+// 		ChromeOptions option = new ChromeOptions();
+// 		options.addArguments("--remote-allow-any-origin");
+// 		WebDriverManager.chromedriver().setup();
+// 		driver = new ChromeDriver(option);
+// 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 		
 		
