@@ -21,12 +21,21 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class Hooks extends Base{
 	@Before
 	public void setup() {
+		
+		ChromeOptions option = new ChromeOptions();
+		WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver(option);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
+		
+		
+		
 	//	 WebDriver driver = new ChromeDriver();
-		System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-	     ChromeOptions options = new ChromeOptions();
-	      options.addArguments("--start-maximized");
+	//	System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+	//     ChromeOptions options = new ChromeOptions();
+	//      options.addArguments("--start-maximized");
 	   // Initialize the ChromeDriver with options
-	      WebDriver driver = new ChromeDriver(options);
+	  //    WebDriver driver = new ChromeDriver(options);
 		 
 		 
 //			ChromeOptions option = new ChromeOptions();
