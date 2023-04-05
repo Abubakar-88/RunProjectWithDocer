@@ -22,7 +22,7 @@ public class Hooks extends Base{
 	@Before
 	public void setup() {
 		
-		System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+		//System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 	     ChromeOptions options = new ChromeOptions();
 		 options.addArguments("--remote-allow-any-origin");
 	      options.addArguments("--start-maximized");
