@@ -26,7 +26,7 @@ public class Hooks extends Base{
 	     ChromeOptions options = new ChromeOptions();
 		 options.addArguments("--remote-allow-any-origin");
 	      options.addArguments("--start-maximized");
-		chromeOptions.add_argument('--disable-dev-shm-usage')
+		options.add_argument('--disable-dev-shm-usage')
 	   // Initialize the ChromeDriver with options
 	      WebDriver driver = new ChromeDriver(options);
 		
