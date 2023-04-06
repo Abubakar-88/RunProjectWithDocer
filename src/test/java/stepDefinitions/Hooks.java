@@ -22,8 +22,8 @@ public class Hooks extends Base{
 	@Before
 	public void setup() {
 		
-		//System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-		WebDriverManager.chromedriver().driverVersion("112.0.5615.49").setup();
+		System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+		//WebDriverManager.chromedriver().driverVersion("112.0.5615.49").setup();
 	     ChromeOptions options = new ChromeOptions();
 		 options.setBinary("/usr/bin/google-chrome");     
 		 options.addArguments("--remote-allow-any-origin");
