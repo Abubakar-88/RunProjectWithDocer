@@ -28,7 +28,7 @@ public class Hooks extends Base{
 		 options.setBinary("/usr/bin/google-chrome");     
 		 options.addArguments("--remote-allow-any-origin");
 	      options.addArguments("--start-maximized");
-		chromeOptions.addArguments("--profile-directory=Default");
+		options.addArguments("--profile-directory=Default");
 		//options.addArguments('--disable-dev-shm-usage');
 		//	option.addArguments("--no-sandbox");
 		//option.addArguments("--headless");
