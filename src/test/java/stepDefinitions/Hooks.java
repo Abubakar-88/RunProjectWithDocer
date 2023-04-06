@@ -23,7 +23,9 @@ public class Hooks extends Base{
 	public void setup() {
 		
 		//System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+		WebDriverManager.chromedriver().driverVersion("111.0.5563.64").setup();
 	     ChromeOptions options = new ChromeOptions();
+		 options.setBinary("/usr/bin/google-chrome");     
 		 options.addArguments("--remote-allow-any-origin");
 	      options.addArguments("--start-maximized");
 		//options.addArguments('--disable-dev-shm-usage');
@@ -33,9 +35,12 @@ public class Hooks extends Base{
 	      WebDriver driver = new ChromeDriver(options);
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		driver = new RemoteWebDriver(capabilities);
-		//driver.capabilities = {"goog:chromeOptions": {"args": ["--headless", "--no-sandbox", "--disable-dev-shm-usage"]}}
 		
 		
+// 		WebDriverManager.chromedriver().driverVersion("104.0.5112.29").setup();
+// ChromeOptions optionsBeta = new ChromeOptions();
+// optionsBeta.setBinary("C:\\location\\to\\chrome.exe");      
+// WebDriver driver = new ChromeDriver(optionsBeta);
 		
 		
 		
