@@ -28,7 +28,7 @@ public class Hooks extends Base{
 	      options.addArguments("--start-maximized");
 		//options.addArguments('--disable-dev-shm-usage');
 		//	option.addArguments("--no-sandbox");
-		option.addArguments("--headless");
+		//option.addArguments("--headless");
 	   // Initialize the ChromeDriver with options
 	      WebDriver driver = new ChromeDriver(options);
 		DesiredCapabilities capabilities = new DesiredCapabilities();
