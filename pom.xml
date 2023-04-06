@@ -7,7 +7,7 @@
   <properties>
 		<cucumber.version>5.7.0</cucumber.version>
 		<selenium.version>4.8.3</selenium.version> 
-		<webdrivermanager.version>5.2.0</webdrivermanager.version>
+		<webdrivermanager.version>5.3.1</webdrivermanager.version>
 		<allure.cucumber5.version>2.14.0</allure.cucumber5.version>
 		<allure.junit4.version>2.14.0</allure.junit4.version>
 		<maven.compiler.plugin.version>3.9.0</maven.compiler.plugin.version>
