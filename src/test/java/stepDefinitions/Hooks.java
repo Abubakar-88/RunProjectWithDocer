@@ -25,8 +25,8 @@ public class Hooks {
 		options.addArguments("--disable-gpu");
 		options.addArguments("--disable-dev-shm-usage");
 		options.addArguments("--no-sandbox");
-		driver.get("https://www.google.com");
 		driver = new ChromeDriver(options);
+		driver.get("https://www.google.com");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 	
