@@ -14,7 +14,7 @@ public class Hooks {
 
     @Before
     public void setup() {
-        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+        // System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.setBinary("/usr/bin/google-chrome");     
         options.addArguments("--remote-allow-any-origin");
