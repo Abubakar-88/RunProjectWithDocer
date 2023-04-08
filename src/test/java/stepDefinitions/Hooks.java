@@ -22,6 +22,8 @@ public class Hooks {
 		options.addArguments("--remote-allow-any-origin");
 		options.addArguments("--start-maximized");
 		options.addArguments("--headless");
+		options.addArguments("--disable-gpu");
+		options.addArguments("--disable-dev-shm-usage");
 		driver = new ChromeDriver(options);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
