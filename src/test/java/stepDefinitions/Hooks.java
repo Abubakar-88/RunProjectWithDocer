@@ -27,9 +27,9 @@ public class Hooks extends Base{
 		 options.setBinary("/usr/bin/google-chrome");     
 		 options.addArguments("--remote-allow-any-origin");
 	     options.addArguments("--start-maximized");
-		option.addArguments("--headless");
-		option.addArguments("--disable-gpu");
-		option.addArguments("--remote-debugging-port=9222");
+		 option.addArguments("--headless");
+		 option.addArguments("--disable-gpu");
+		 option.addArguments("--remote-debugging-port=9222");
 	   // Initialize the ChromeDriver with options
 	      WebDriver driver = new ChromeDriver(options);
 		DesiredCapabilities capabilities = new DesiredCapabilities();
