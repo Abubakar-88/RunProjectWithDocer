@@ -27,11 +27,11 @@ public class Hooks extends Base{
 	     ChromeOptions options = new ChromeOptions();
 		 options.setBinary("/usr/bin/google-chrome");     
 		 options.addArguments("--remote-allow-any-origin");
-	      options.addArguments("--start-maximized");
-		options.addArguments("--profile-directory=Default");
-		//options.addArguments('--disable-dev-shm-usage');
-		//	option.addArguments("--no-sandbox");
-		//option.addArguments("--headless");
+	     options.addArguments("--start-maximized");
+		 options.addArguments("--profile-directory=Default");
+		 options.addArguments('--disable-dev-shm-usage');
+		 option.addArguments("--no-sandbox");
+		 option.addArguments("--headless");
 	   // Initialize the ChromeDriver with options
 	      WebDriver driver = new ChromeDriver(options);
 		DesiredCapabilities capabilities = new DesiredCapabilities();
