@@ -18,30 +18,26 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class Hooks extends Base{
-	@Before
-	public void setup() {
-		
-		System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-	     ChromeOptions options = new ChromeOptions();
-		 options.setBinary("/usr/bin/google-chrome");     
-		 options.addArguments("--remote-allow-any-origin");
-	     options.addArguments("--start-maximized");
-		 option.addArguments("--headless");
-		 option.addArguments("--disable-gpu");
-		 option.addArguments("--remote-debugging-port=9222");
-	   // Initialize the ChromeDriver with options
-	      WebDriver driver = new ChromeDriver(options);
-		DesiredCapabilities capabilities = new DesiredCapabilities();
-		driver = new RemoteWebDriver(capabilities);
-		
-		
-	}
-	@After
-	public void tearDown() {
-		  if (driver != null) {
-                  driver.quit(); 
-                 }
-	}
+@Before
+public void setup() {
+    System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+    ChromeOptions options = new ChromeOptions();
+    options.setBinary("/usr/bin/google-chrome");     
+    options.addArguments("--remote-allow-any-origin");
+    options.addArguments("--start-maximized");
+    options.addArguments("--headless");
+    options.addArguments("--disable-gpu");
+    options.addArguments("--remote-debugging-port=9222");
+    
+    // Initialize the ChromeDriver with options
+    WebDriver driver = new ChromeDriver(options);
+    DesiredCapabilities capabilities = new DesiredCapabilities();
+    driver = new RemoteWebDriver(capabilities);
+}
 
+@After
+public void tearDown() {
+    if (driver != null) {
+        driver.quit(); 
+    }
 }
