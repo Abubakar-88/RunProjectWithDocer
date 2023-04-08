@@ -20,6 +20,7 @@ public class Hooks {
         options.addArguments("--remote-allow-any-origin");
         options.addArguments("--start-maximized");
         options.addArguments("--headless");
+        options.addArguments("--no-sandbox");
         options.addArguments("--disable-gpu");
         options.addArguments("--remote-debugging-port=9222");
 		options.addArguments("--remote-debugging-address=0.0.0.0");
