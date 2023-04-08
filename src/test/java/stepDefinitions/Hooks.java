@@ -26,9 +26,9 @@ public class Hooks extends Base{
 		//WebDriverManager.chromedriver().driverVersion("112.0.5615.49").setup();
 	     ChromeOptions options = new ChromeOptions();
 		 options.setBinary("/usr/bin/google-chrome");     
-		 options.addArguments("--remote-allow-any-origin");
-	     options.addArguments("--start-maximized");
-		 options.addArguments("--profile-directory=Default");
+		//  options.addArguments("--remote-allow-any-origin");
+	    //  options.addArguments("--start-maximized");
+		//  options.addArguments("--profile-directory=Default");
 		//  options.addArguments("--disable-dev-shm-usage");
 		//  option.addArguments("--no-sandbox");
 		//  option.addArguments("--headless");
