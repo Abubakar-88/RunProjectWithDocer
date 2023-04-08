@@ -22,6 +22,7 @@ public class Hooks {
         options.addArguments("--headless");
         options.addArguments("--disable-gpu");
         options.addArguments("--remote-debugging-port=9222");
+		options.addArguments("--remote-debugging-address=0.0.0.0");
 
         // Initialize the ChromeDriver with options
         driver = new ChromeDriver(options);
