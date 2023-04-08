@@ -16,7 +16,7 @@ public class Hooks {
     public void setup() {
         System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         ChromeOptions options = new ChromeOptions();
-        options.setBinary("/usr/bin/google-chrome");     
+        options.setBinary(" sudo /usr/bin/google-chrome");     
         options.addArguments("--remote-allow-any-origin");
         options.addArguments("--start-maximized");
         options.addArguments("--headless");
@@ -32,10 +32,10 @@ public class Hooks {
         driver = new RemoteWebDriver(capabilities);
     }
 
-    @After
-    public void tearDown() {
-        if (driver != null) {
-            driver.quit(); 
-        }
-    }
+    // @After
+    // public void tearDown() {
+    //     if (driver != null) {
+    //         driver.quit(); 
+    //     }
+    // }
 }
