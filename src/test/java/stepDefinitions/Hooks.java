@@ -19,12 +19,11 @@ public class Hooks {
 		WebDriverManager.chromedriver().setup();
 		ChromeOptions options = new ChromeOptions();
 		options.setBinary("/usr/bin/google-chrome");     
-		options.addArguments("--remote-allow-any-origin");
-		options.addArguments("--start-maximized");
 		options.addArguments("--headless");
 		options.addArguments("--disable-gpu");
 		options.addArguments("--disable-dev-shm-usage");
 		options.addArguments("--no-sandbox");
+		driver.get('https://www.google.com')
 		driver = new ChromeDriver(options);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
