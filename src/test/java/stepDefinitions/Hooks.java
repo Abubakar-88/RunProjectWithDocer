@@ -17,9 +17,12 @@ public class Hooks {
      */
     @Before
 public void setup() {
-    System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-    ChromeOptions options = new ChromeOptions();
-    options.addArguments("--remote-allow-any-origin");
+//     System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+//     ChromeOptions options = new ChromeOptions();
+//     options.addArguments("--remote-allow-any-origin");
+    ChromeOptions opt = new ChromeOptions();
+		
+		WebDriver driver = new RemoteWebDriver(new URL("http://3.131.160.205:4444/"),opt);
     
 //     options.addArguments("--start-maximized");
 //     options.addArguments("--headless");
@@ -28,7 +31,7 @@ public void setup() {
 //     options.addArguments("--disable-dev-shm-usage");
 //     options.addArguments("--remote-debugging-port=9222");
 //     options.addArguments("--remote-debugging-address=0.0.0.0");
-    driver = new ChromeDriver(options);
+  //  driver = new ChromeDriver(options);
 }
     @After
     public void tearDown() {
