@@ -22,7 +22,7 @@ public void setup() {
 //     options.addArguments("--remote-allow-any-origin");
     ChromeOptions opt = new ChromeOptions();
 		
-		WebDriver driver = new RemoteWebDriver(new URL("http://3.131.160.205:4444/"),opt);
+		WebDriver driver = new RemoteWebDriver(new URL("http://3.145.197.131:4444/"),opt);
     
 //     options.addArguments("--start-maximized");
 //     options.addArguments("--headless");
