@@ -10,7 +10,7 @@
 		<webdrivermanager.version>5.3.1</webdrivermanager.version>
 		<allure.cucumber5.version>2.14.0</allure.cucumber5.version>
 		<allure.junit4.version>2.14.0</allure.junit4.version>
-		<maven.compiler.plugin.version>3.9.0</maven.compiler.plugin.version>
+<!-- 		//<maven.compiler.plugin.version>3.9.0</maven.compiler.plugin.version> -->
 		<maven.surefire.plugin.version>3.0.0-M5</maven.surefire.plugin.version>
 		<maven.compiler.source>11</maven.compiler.source>
 		<maven.compiler.target>11</maven.compiler.target>
@@ -56,9 +56,10 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
+				  <artifactId>maven-compiler-plugin</artifactId>
+<!-- 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>${maven.compiler.plugin.version}</version>
+				<version>${maven.compiler.plugin.version}</version> -->
 				<configuration>
 					<source>${maven.compiler.source}</source>
 					<target>${maven.compiler.target}</target>
