@@ -63,13 +63,19 @@
 				<configuration>
 					<source>${maven.compiler.source}</source>
 					<target>${maven.compiler.target}</target>
+					includes>
+						<!-- check all of its sub dirs to find Runner.java -->
+						<include>**/Runner.java</include>
+					</includes>
+					
+					
 				</configuration>
 			</plugin>
 		<plugin>
 <!-- 				<groupId>org.apache.maven.plugins</groupId> -->
 <!-- 				<artifactId>maven-surefire-plugin</artifactId> -->
 <!-- 				<version>${maven.surefire.plugin.version}</version> -->
-				<configuration>
+<!-- 				<configuration>
 					<testFailureIgnore>true</testFailureIgnore>
 					  <configuration>
         <useModulePath>false</useModulePath>
@@ -94,7 +100,7 @@
 						<artifactId>aspectjweaver</artifactId>
 						<version>${aspectj.version}</version>
 					</dependency>
-				</dependencies>
+				</dependencies> -->
 			</plugin>  
 		</plugins>
 	</build>
