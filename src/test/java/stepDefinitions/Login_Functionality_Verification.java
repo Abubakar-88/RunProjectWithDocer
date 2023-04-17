@@ -11,20 +11,15 @@ import io.cucumber.java.en.When;
 
 public class Login_Functionality_Verification extends Base{
 	
-		@Given("I am using {string} browser")
-    public void iAmUsingBrowser(String browser) {
-        System.out.println("Browser: " + browser);
-       
-    }
 	
-	@When("I am in Landing Home Page")
+	@Given("I am in Landing Home Page")
 	public void i_am_in_Landing_Page() {
 		navigateURL("https://it.microtechlimited.com/");
 		String s = getText(By.xpath("//div//h1['Welcome to MicroTech NA.']"));
 		assertEquals("Welcome to MicroTech NA.", s);
 	}
 
-	@Then("I Click on Login")
+	@When("I Click on Login")
 	public void i_Click_on_Login() {
 		click(By.xpath("//a[@href=\"elogin.php\"]"));
 	}
