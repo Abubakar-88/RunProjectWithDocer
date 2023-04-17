@@ -69,10 +69,10 @@
 				<version>${maven.surefire.plugin.version}</version>
 				<configuration>
 					<testFailureIgnore>true</testFailureIgnore>
-					<includes>
+<!-- 					<includes>
 						<!-- check all of its sub dirs to find Runner.java -->
 						<include>Runner.java</include>
-					</includes>
+					</includes> -->
 					<systemPropertyVariables>
 						<!--${project.basedir} is the root directory of your project. -->
 						<!--${project.build.directory} is equivalent to ${project.basedir}/target -->
