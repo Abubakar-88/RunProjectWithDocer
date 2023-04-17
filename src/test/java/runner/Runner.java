@@ -9,8 +9,7 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 		features = {"src/test/resources/features"}, 
 		glue = {"stepDefinitions"}, 
-		monochrome= true,
-       plugin = {"pretty", "html:test-output", "json:target/cucumber-report/cucumber.json" }
+               plugin = {"pretty", "html:test-output", "json:target/cucumber-report/cucumber.json" }
 )
 public class Runner {
 
