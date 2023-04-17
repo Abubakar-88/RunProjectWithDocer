@@ -1,7 +1,7 @@
 Feature: Login Functionality Verification
 
+@Smoke
 Scenario Outline: Login as a Customer 
-Given I am using "<browser>" browser
 Then I am in Landing Home Page
 When I Click on Login
 Then I will be in Login Page
@@ -10,7 +10,3 @@ Then I enter User Id "david@gmail.com"
 And I enter Password "1234"
 When I click Login Button
 Then I will see Customer Home Page
-
- Examples:
-| browser |
-| chrome   |
