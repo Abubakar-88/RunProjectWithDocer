@@ -1,6 +1,6 @@
 Feature: Login Functionality Verification
 
-@Smoke
+@smoke
 Scenario Outline: Login as a Customer 
 Then I am in Landing Home Page
 When I Click on Login
