@@ -71,7 +71,7 @@
 					<testFailureIgnore>true</testFailureIgnore>
 					<includes>
 						<!-- check all of its sub dirs to find Runner.java -->
-						<include>src/test/java/runner/Runner.java</include>
+						<include>*/Runner.java</include>
 					</includes>
 					<systemPropertyVariables>
 						<!--${project.basedir} is the root directory of your project. -->
