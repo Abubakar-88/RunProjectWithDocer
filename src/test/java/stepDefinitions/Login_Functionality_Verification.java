@@ -12,6 +12,12 @@ import io.cucumber.java.en.When;
 public class Login_Functionality_Verification extends Base{
 	protected static WebDriver driver; 
 	
+	@Before
+	public void setup() throws MalformedURLException, InterruptedException {
+          ChromeOptions opt = new ChromeOptions();
+		
+	WebDriver driver = new RemoteWebDriver(new URL("http://3.145.197.131:4444"),opt);
+	}
 	@Given("I am in Landing Home Page")
 	public void i_am_in_Landing_Page() {
 		if(driver != null) {
