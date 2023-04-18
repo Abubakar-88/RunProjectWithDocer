@@ -29,6 +29,12 @@ public class Login_Functionality_Verification {
 			System.out.println("Driver is not initialized");
 		}
 	}
+	@After
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit(); 
+        }
+    }
 
 // 	@When("I Click on Login")
 // 	public void i_Click_on_Login() {
