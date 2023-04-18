@@ -3,14 +3,14 @@ package stepDefinitions;
 import static org.junit.Assert.assertEquals;
 
 import org.openqa.selenium.By;
-
+import org.openqa.selenium.WebDriver;
 import base.Base;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class Login_Functionality_Verification extends Base{
-	
+	protected static WebDriver driver; 
 	
 	@Given("I am in Landing Home Page")
 	public void i_am_in_Landing_Page() {
