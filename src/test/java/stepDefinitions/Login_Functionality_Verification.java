@@ -4,15 +4,6 @@ import static org.junit.Assert.assertEquals;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import java.net.MalformedURLException;
-import java.net.URL;
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
-
 
 import base.Base;
 import io.cucumber.java.en.Given;
