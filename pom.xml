@@ -73,7 +73,7 @@
 						<!-- check all of its sub dirs to find Runner.java -->
 						<include>**/Runner.java</include>
 					</includes> 
-<!-- 					<systemPropertyVariables>
+ 					<systemPropertyVariables>
 						<!--${project.basedir} is the root directory of your project. -->
 						<!--${project.build.directory} is equivalent to ${project.basedir}/target -->
 						<allure.results.directory>${project.basedir}/allure-results</allure.results.directory>
@@ -89,7 +89,7 @@
 						<artifactId>aspectjweaver</artifactId>
 						<version>${aspectj.version}</version>
 					</dependency>
-				</dependencies> -->
+				</dependencies> 
 			</plugin>
 				<plugin>
 			<groupId>org.apache.maven.plugins</groupId>
