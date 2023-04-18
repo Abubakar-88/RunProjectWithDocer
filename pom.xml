@@ -112,25 +112,26 @@
 			</executions>
 		</plugin>
 		<plugin>
-			<groupId>net.masterthought</groupId>
-			<artifactId>maven-cucumber-reporting</artifactId>
-			<version>5.6.0</version>
-			<executions>
-				<execution>
-					<id>generate-report</id>
-					<phase>verify</phase>
-					<goals>
-						<goal>generate</goal>
-					</goals>
-					<configuration>
-						<outputDirectory>${project.build.directory}/cucumber-reports</outputDirectory>
-						<jsonFiles>
-							<jsonFile>${project.build.directory}/cucumber.json</jsonFile>
-						</jsonFiles>
-					</configuration>
-				</execution>
-			</executions>
-		</plugin>
+    <groupId>net.masterthought</groupId>
+    <artifactId>maven-cucumber-reporting</artifactId>
+    <version>5.6.0</version>
+    <executions>
+        <execution>
+            <id>generate-report</id>
+            <phase>verify</phase>
+            <goals>
+                <goal>generate</goal>
+            </goals>
+            <configuration>
+                <outputDirectory>${project.build.directory}/cucumber-reports</outputDirectory>
+                <inputDirectory>${project.build.directory}</inputDirectory>
+                <jsonFiles>
+                    <jsonFile>${project.build.directory}/cucumber.json</jsonFile>
+                </jsonFiles>
+            </configuration>
+        </execution>
+    </executions>
+</plugin>
 		</plugins>
 	</build>
 
