@@ -9,7 +9,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class Login_Functionality_Verification extends Base{
+public class Login_Functionality_Verification {
 	protected static WebDriver driver; 
 	
 	@Before
