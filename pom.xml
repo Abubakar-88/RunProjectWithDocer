@@ -73,7 +73,7 @@
 						<!-- check all of its sub dirs to find Runner.java -->
 						<include>**/Runner.java</include>
 					</includes> 
-					<systemPropertyVariables>
+<!-- 					<systemPropertyVariables>
 						<!--${project.basedir} is the root directory of your project. -->
 						<!--${project.build.directory} is equivalent to ${project.basedir}/target -->
 						<allure.results.directory>${project.basedir}/allure-results</allure.results.directory>
@@ -89,8 +89,48 @@
 						<artifactId>aspectjweaver</artifactId>
 						<version>${aspectj.version}</version>
 					</dependency>
-				</dependencies>
+				</dependencies> -->
 			</plugin>
+				<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-failsafe-plugin</artifactId>
+			<version>3.0.0-M5</version>
+			<executions>
+				<execution>
+					<id>cucumber-tests</id>
+					<phase>verify</phase>
+					<goals>
+						<goal>integration-test</goal>
+						<goal>verify</goal>
+					</goals>
+					<configuration>
+						<includes>
+							<include>**/Runner.java</include>
+						</includes>
+					</configuration>
+				</execution>
+			</executions>
+		</plugin>
+		<plugin>
+			<groupId>net.masterthought</groupId>
+			<artifactId>maven-cucumber-reporting</artifactId>
+			<version>5.6.0</version>
+			<executions>
+				<execution>
+					<id>generate-report</id>
+					<phase>verify</phase>
+					<goals>
+						<goal>generate</goal>
+					</goals>
+					<configuration>
+						<outputDirectory>${project.build.directory}/cucumber-reports</outputDirectory>
+						<jsonFiles>
+							<jsonFile>${project.build.directory}/cucumber.json</jsonFile>
+						</jsonFiles>
+					</configuration>
+				</execution>
+			</executions>
+		</plugin>
 		</plugins>
 	</build>
 
