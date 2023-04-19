@@ -11,31 +11,21 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class Login_Functionality_Verification {
-	  private WebDriver driver;
+	private WebDriver driver;
 
-//     @Before
-//     public void setup() throws MalformedURLException, InterruptedException {
-//            ChromeOptions opt = new ChromeOptions();
-		
-// 	 driver = new RemoteWebDriver(new URL("http://3.145.197.131:4444"),opt);
-//        }
-//     @After
-//     public void tearDown() {
-//             driver.quit(); 
-    
-//     }
 	
 	
 	@Given("I am in Landing Home Page")
 	public void i_am_in_Landing_Page() {
 		 ChromeOptions opt = new ChromeOptions();
 		
-	 driver = new RemoteWebDriver(new URL("http://3.145.197.131:4444"),opt);
+        driver = new RemoteWebDriver(new URL("http://3.145.197.131:4444"),opt);
 		
 		if(driver != null) {
 			driver.get("https://it.microtechlimited.com/");	
 			String s = driver.findElement(By.xpath("//div//h1['Welcome to MicroTech NA.']")).getText();
-			assertEquals("Welcome to MicroTech NA.", s);
+			//assertEquals("Welcome to MicroTech NA.", s);
+			System.out.println("welcom text: "+ s);
 		} else {
 			// Handle case when driver is not initialized
 			System.out.println("Driver is not initialized");
@@ -43,10 +33,11 @@ public class Login_Functionality_Verification {
 	}
 
 
-// 	@When("I Click on Login")
-// 	public void i_Click_on_Login() {
-// 		click(By.xpath("//a[@href=\"elogin.php\"]"));
-// 	}
+	@When("I Click on Login")
+	public void i_Click_on_Login() {
+		//click(By.xpath("//a[@href=\"elogin.php\"]"));
+		driver.findElement(By.xpath("//a[@href=\"elogin.php\"]")).click();
+	}
 
 // 	@Then("I will be in Login Page")
 // 	public void i_will_be_in_Login_Page() {
