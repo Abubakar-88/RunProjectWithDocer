@@ -10,7 +10,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class Login_Functionality_Verification extend Base {
+public class Login_Functionality_Verification extends Base {
 	protected static WebDriver driver; 
 	
 	
