@@ -13,24 +13,28 @@ import io.cucumber.java.en.When;
 public class Login_Functionality_Verification extends Base {
 	  private WebDriver driver;
 
-    @Before
-    public void setup() throws MalformedURLException, InterruptedException {
-    ChromeOptions opt = new ChromeOptions();
+//     @Before
+//     public void setup() throws MalformedURLException, InterruptedException {
+//            ChromeOptions opt = new ChromeOptions();
 		
-	 driver = new RemoteWebDriver(new URL("http://3.145.197.131:4444"),opt);
-       }
-    @After
-    public void tearDown() {
-            driver.quit(); 
+// 	 driver = new RemoteWebDriver(new URL("http://3.145.197.131:4444"),opt);
+//        }
+//     @After
+//     public void tearDown() {
+//             driver.quit(); 
     
-    }
+//     }
 	
 	
 	@Given("I am in Landing Home Page")
 	public void i_am_in_Landing_Page() {
+		 ChromeOptions opt = new ChromeOptions();
+		
+	 driver = new RemoteWebDriver(new URL("http://3.145.197.131:4444"),opt);
+		
 		if(driver != null) {
 			driver.get("https://it.microtechlimited.com/");	
-			String s = getText(By.xpath("//div//h1['Welcome to MicroTech NA.']"));
+			String s = driver.findElement(By.xpath("//div//h1['Welcome to MicroTech NA.']")).getText();
 			assertEquals("Welcome to MicroTech NA.", s);
 		} else {
 			// Handle case when driver is not initialized
