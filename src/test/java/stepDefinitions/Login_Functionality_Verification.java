@@ -38,7 +38,7 @@ public class Login_Functionality_Verification extends Hooks {
 		//click(By.xpath("//a[@href=\"elogin.php\"]"));
 		driver.findElement(By.xpath("//a[@href=\"elogin.php\"]")).click();
 	}
-driver.quit();
+//driver.quit();
 // 	@Then("I will be in Login Page")
 // 	public void i_will_be_in_Login_Page() {
 // 		String s = getText(By.xpath("//div//h1"));
