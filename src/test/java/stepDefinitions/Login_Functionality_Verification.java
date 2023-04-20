@@ -9,10 +9,23 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import java.net.MalformedURLException;
+import java.net.URL;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 
-public class Login_Functionality_Verification extends Hooks {
+
+
+
+public class Login_Functionality_Verification  {
 	private WebDriver driver;
+    @Before
+public void setup() throws MalformedURLException, InterruptedException {
+    ChromeOptions opt = new ChromeOptions();
+		
+	 driver = new RemoteWebDriver(new URL("http://3.145.197.131:4444"),opt);
 
+}
 	
 	
 	@Given("I am in Landing Home Page")
@@ -73,5 +86,10 @@ public class Login_Functionality_Verification extends Hooks {
 // 	    assertEquals("Welcome David",s);
 // 	    System.out.println(s);
 // 	}
-
+ @After
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit(); 
+        }
+    }
 }
