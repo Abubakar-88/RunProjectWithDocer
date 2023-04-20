@@ -17,9 +17,9 @@ public class Login_Functionality_Verification extends Hooks {
 	
 	@Given("I am in Landing Home Page")
 	public void i_am_in_Landing_Page() {
-		 ChromeOptions opt = new ChromeOptions();
+// 		 ChromeOptions opt = new ChromeOptions();
 		
-    WebDriver driver = new RemoteWebDriver(new URL("http://3.145.197.131:4444"),opt);
+//     WebDriver driver = new RemoteWebDriver(new URL("http://3.145.197.131:4444"),opt);
 		
 		if(driver != null) {
 			driver.get("https://it.microtechlimited.com/");	
