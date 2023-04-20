@@ -7,10 +7,11 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import java.net.MalformedURLException;
 import java.net.URL;
+import base.Base;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 
-public class Hooks {
+public class Hooks extends Base {
     private WebDriver driver;
 
     @Before
