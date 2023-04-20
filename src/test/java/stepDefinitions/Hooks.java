@@ -12,7 +12,7 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 
 public class Hooks extends Base {
-    private WebDriver driver;
+  
 
     @Before
 public void setup() throws MalformedURLException {
