@@ -11,13 +11,14 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import java.net.MalformedURLException;
 import java.net.URL;
+import base.Base;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 
 
 
 
-public class Login_Functionality_Verification  extends Base{
+public class Login_Functionality_Verification extends Base{
 
 	
 	@Given("I am in Landing Home Page")
