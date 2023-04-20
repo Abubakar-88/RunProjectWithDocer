@@ -46,13 +46,15 @@ public class Login_Functionality_Verification extends Base{
 	public void i_will_be_in_Login_Page() {
 		String s = getText(By.xpath("//div//h1"));
 		assertEquals("Employee Login", s);
+		System.out.println("Employee Login Text: "+ s);
 	}
 	
 	@Then("Click Customer Login")
 	public void click_Customer_Login() {
 		click(By.xpath("//a[@href=\"clogin.php\"]"));
 		String customerLogin= getText(By.xpath("//div/h1"));
-		assertEquals("Customer Login", customerLogin);		
+		assertEquals("Customer Login", customerLogin);	
+		System.out.println("Customer Login Text: "+ customerLogin);
 	}
 
 	@Then("I enter User Id {string}")
