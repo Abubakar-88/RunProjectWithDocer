@@ -41,7 +41,8 @@ public class Login_Functionality_Verification extends Base{
 	public void i_Click_on_Login() {
 		//click(By.xpath("//a[@href=\"elogin.php\"]"));
 		driver.findElement(By.xpath("//a[@href=\"elogin.php\"]")).click();
-	}
+		 System.out.println("somthing");
+		 }
 //driver.quit();
 	@Then("I will be in Login Page")
 	public void i_will_be_in_Login_Page() {
