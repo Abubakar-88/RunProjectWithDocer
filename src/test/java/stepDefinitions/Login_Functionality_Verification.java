@@ -49,7 +49,6 @@ public class Login_Functionality_Verification extends Base{
 		String s = getText(By.xpath("//div//h1"));
 		assertEquals("Employee Login", s);
 		System.out.println("Employee Login Text: "+ s);
-		System.out.println("Something code");
 	}
 	
 	@Then("Click Customer Login")
