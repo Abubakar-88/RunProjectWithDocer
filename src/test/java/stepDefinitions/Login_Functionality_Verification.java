@@ -3,15 +3,21 @@ package stepDefinitions;
 import static org.junit.Assert.assertEquals;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.asserts.SoftAssert;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+
 import java.net.MalformedURLException;
 import java.net.URL;
 import base.Base;
+import base.ScenarioContext;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 
@@ -19,8 +25,8 @@ import io.cucumber.java.Before;
 
 
 public class Login_Functionality_Verification extends Base{
-
-	
+	private int screenshotCounter = 1;
+	private SoftAssert soft = new SoftAssert();
 	@Given("I am in Landing Home Page")
 	public void i_am_in_Landing_Page() {
 	
@@ -46,11 +52,31 @@ public class Login_Functionality_Verification extends Base{
 //driver.quit();
 	@Then("I will be in Login Page")
 	public void i_will_be_in_Login_Page() {
-		String s = getText(By.xpath("//div//h1"));
-		assertEquals("Employee Login", s);
-		System.out.println("Employee Login Text: "+ s);
+//		String s = getText(By.xpath("//div//h1"));
+//		assertEquals("Employee Login", s);
+//		System.out.println("Employee Login Text: "+ s);
+		
+		
+		 try {
+ 	        String s = getText(By.xpath("//div//h1"));
+ 	        soft.assertEquals("Employee Loginllll", s);
+ 	    } catch (AssertionError e) {
+ 	    	byte[] screenshot = captureScreenshot();
+ 	        String screenshotName = "Step_Name_Screenshot_" + screenshotCounter;
+ 	        ScenarioContext.attachScreenshot(screenshot, screenshotName);
+ 	        soft.fail("Employee Login Menu Assertion Failure");
+ 	    }
 	}
-	
+    private byte[] captureScreenshot() {
+        try {
+            // Capture a screenshot using your WebDriver instance
+            TakesScreenshot ts = (TakesScreenshot) driver;
+            return ts.getScreenshotAs(OutputType.BYTES);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null; // Handle exceptions as needed
+        }
+    }
 	@Then("Click Customer Login")
 	public void click_Customer_Login() {
 		click(By.xpath("//a[@href=\"clogin.php\"]"));

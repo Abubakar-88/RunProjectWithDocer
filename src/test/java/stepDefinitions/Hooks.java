@@ -1,5 +1,7 @@
 package stepDefinitions;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -9,7 +11,9 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import base.Base;
 import io.cucumber.java.After;
+import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 
 public class Hooks extends Base {
   
@@ -22,6 +26,30 @@ public void setup() throws MalformedURLException {
     
 
 }
+    
+  private int screenshotCounter = 1; // Initialize a counter for screenshots
+
+  @AfterStep(order = 1)
+  public void captureScreenshot(Scenario scenario) {
+      try {
+          if (scenario.isFailed()) {
+              TakesScreenshot ts = (TakesScreenshot) driver;
+              byte[] screenshot = ts.getScreenshotAs(OutputType.BYTES);
+
+              // Create a unique name for each screenshot
+              String screenshotName = "Step_" + scenario.getName() + "_Screenshot_" + screenshotCounter;
+              scenario.attach(screenshot, "image/png", screenshotName);
+              screenshotCounter++;
+          }
+      } catch (Exception e) {
+          e.printStackTrace();
+      }
+  }
+  
+  
+  
+  
+  
     @After
     public void tearDown() {
         if (driver != null) {
