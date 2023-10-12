@@ -9,7 +9,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.asserts.SoftAssert;
-
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -17,7 +16,6 @@ import io.cucumber.java.en.When;
 import java.net.MalformedURLException;
 import java.net.URL;
 import base.Base;
-import base.ScenarioContext;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 
