@@ -59,22 +59,20 @@ public class Login_Functionality_Verification extends Base{
  	        String s = getText(By.xpath("//div//h1"));
  	        soft.assertEquals("Employee Loginllll", s);
  	    } catch (AssertionError e) {
- 	    	byte[] screenshot = captureScreenshot();
- 	        String screenshotName = "Step_Name_Screenshot_" + screenshotCounter;
- 	        ScenarioContext.attachScreenshot(screenshot, screenshotName);
+ 	    	
  	        soft.fail("Employee Login Menu Assertion Failure");
  	    }
 	}
-    private byte[] captureScreenshot() {
-        try {
-            // Capture a screenshot using your WebDriver instance
-            TakesScreenshot ts = (TakesScreenshot) driver;
-            return ts.getScreenshotAs(OutputType.BYTES);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null; // Handle exceptions as needed
-        }
-    }
+//    private byte[] captureScreenshot() {
+//        try {
+//            // Capture a screenshot using your WebDriver instance
+//            TakesScreenshot ts = (TakesScreenshot) driver;
+//            return ts.getScreenshotAs(OutputType.BYTES);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            return null; // Handle exceptions as needed
+//        }
+//    }
 	@Then("Click Customer Login")
 	public void click_Customer_Login() {
 		click(By.xpath("//a[@href=\"clogin.php\"]"));
