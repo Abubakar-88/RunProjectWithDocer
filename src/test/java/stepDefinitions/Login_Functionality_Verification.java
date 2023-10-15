@@ -89,16 +89,35 @@ public class Login_Functionality_Verification extends Base{
 		System.out.println("Customer Login Text: "+ customerLogin);
 	}
 
-	@Then("I enter User Id {string}")
-	public void i_enter_User_Id(String string) {
-		sendKeys(By.name("mailuid"),string);
-		System.out.println("enter user ID");
-	}
+//	@Then("I enter User Id {string}")
+//	public void i_enter_User_Id(String string) {
+//		
+//		sendKeys(By.name("mailuid"),string);
+//		System.out.println("enter user ID");
+//	}
+//
+//	@Then("I enter Password {string}")
+//	public void i_enter_Password(String string) {
+//		sendKeys(By.name("pwd"),string);
+//	}
+	
+	  @When("I enter my username and password")
+	    public void iEnterUsernameAndPassword() {
+	        String username = System.getProperty("username");
+	        String password = System.getProperty("password");
 
-	@Then("I enter Password {string}")
-	public void i_enter_Password(String string) {
-		sendKeys(By.name("pwd"),string);
-	}
+	        sendKeys(By.name("mailuid"), username);
+			sendKeys(By.name("pwd"), password);
+	        
+	        
+	        // Use the username and password obtained from system properties
+	        System.out.println("Username: " + username);
+	        System.out.println("Password: " + password);
+
+	    }
+	
+	
+	
 	
 	@When("I click Login Button")
 	public void i_click_Login_Button() {
