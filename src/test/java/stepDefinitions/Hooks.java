@@ -22,7 +22,7 @@ public class Hooks extends Base {
 public void setup() throws MalformedURLException {
     ChromeOptions opt = new ChromeOptions();
 		
-	 driver = new RemoteWebDriver(new URL("http://3.141.126.77:4444"),opt);
+	 driver = new RemoteWebDriver(new URL("http://3.142.141.206:4444"),opt);
     
 
 }
