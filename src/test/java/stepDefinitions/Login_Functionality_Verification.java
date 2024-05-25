@@ -18,7 +18,7 @@ public class Login_Functionality_Verification extends Base {
 	private SoftAssert soft = new SoftAssert();
 	@Given("I am in Landing Home Page")
 	public void i_am_in_Landing_Page() {
-	
+	  System.out.println("Home page");
 		if(driver != null) {
 			driver.get("https://it.microtechlimited.com/");	
 			String s = driver.findElement(By.xpath("//div//h1['Welcome to MicroTech NA.']")).getText();
@@ -28,7 +28,7 @@ public class Login_Functionality_Verification extends Base {
 			// Handle case when driver is not initialized
 			System.out.println("Driver is not initialized");
 		}
-		//67
+
 	}
 
 
