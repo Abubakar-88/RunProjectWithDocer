@@ -2,27 +2,18 @@ package stepDefinitions;
 
 import static org.junit.Assert.assertEquals;
 
+import base.Base;
 import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.asserts.SoftAssert;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-import java.net.MalformedURLException;
-import java.net.URL;
-import base.Base;
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
 
 
 
 
-public class Login_Functionality_Verification extends Base{
+public class Login_Functionality_Verification extends Base {
 	private int screenshotCounter = 1;
 	private SoftAssert soft = new SoftAssert();
 	@Given("I am in Landing Home Page")
@@ -66,22 +57,22 @@ public class Login_Functionality_Verification extends Base{
 	}
 	@Then("I click Customer Login menu")
 	public void i_click_Customer_Login_menu() {
-		click(By.xpath("//a[@href=\"clogin.php\"]"));
+		click(By.xpath("//a[@href='clogin.php']"));
 		String customerLogin= getText(By.xpath("//div/h1"));
 		assertEquals("Customer Login", customerLogin);	
 		System.out.println("Customer Login Text: "+ customerLogin);
 	}
 
 	@Then("I enter User Id {string}")
-	public void i_enter_User_Id(String string) {
+	public void i_enter_User_Id(String email) {
 
-		sendKeys(By.name("mailuid"),string);
+		sendKeys(By.name("mailuid"),email);
 		System.out.println("enter user ID");
 	}
 
 	@Then("I enter Password {string}")
-	public void i_enter_Password(String string) {
-		sendKeys(By.name("pwd"),string);
+	public void i_enter_Password(String pass) {
+		sendKeys(By.name("pwd"),pass);
 	}
 
 	@When("I click Login Button")

@@ -1,5 +1,0 @@
-runner\Runner.class
-stepDefinitions\Hooks.class
-stepDefinitions\ScenarioContext.class
-stepDefinitions\Login_Functionality_Verification.class
-base\Base.class
