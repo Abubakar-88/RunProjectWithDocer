@@ -18,7 +18,7 @@ public class Login_Functionality_Verification extends Base {
 	private SoftAssert soft = new SoftAssert();
 	@Given("I am in Landing Home Page")
 	public void i_am_in_Landing_Page() {
-	  System.out.println("Home page");
+	  System.out.println("I am in the home page");
 		if(driver != null) {
 			driver.get("https://it.microtechlimited.com/");	
 			String s = driver.findElement(By.xpath("//div//h1['Welcome to MicroTech NA.']")).getText();
@@ -41,9 +41,6 @@ public class Login_Functionality_Verification extends Base {
 //driver.quit();
 	@Then("I am in the employee Login Page")
 	public void i_am_in_the_employee_Login_Page() {
-//		String s = getText(By.xpath("//div//h1"));
-//		assertEquals("Employee Login", s);
-//		System.out.println("Employee Login Text: "+ s);
 		try {
 
 			String s = getText(By.xpath("//div//h1"));
