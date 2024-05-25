@@ -41,48 +41,31 @@ public class Login_Functionality_Verification extends Base{
 	}
 
 
-	@When("I Click on Login")
-	public void i_Click_on_Login() {
+	@When("I click on Login menu")
+	public void i_Click_on_Login_menu() {
 		//click(By.xpath("//a[@href=\"elogin.php\"]"));
 		driver.findElement(By.xpath("//a[@href=\"elogin.php\"]")).click();
 		 System.out.println("somthing");
 		 }
 //driver.quit();
-	@Then("I will be in Login Page")
-	public void i_will_be_in_Login_Page() {
+	@Then("I am in the employee Login Page")
+	public void i_am_in_the_employee_Login_Page() {
 //		String s = getText(By.xpath("//div//h1"));
 //		assertEquals("Employee Login", s);
 //		System.out.println("Employee Login Text: "+ s);
 		try {
-			           
-			           String s = getText(By.xpath("//div//h1"));
-			           soft.assertEquals("Employee Loginllll", s);
-			           soft.assertAll();
-			        } catch (AssertionError e) {
-			           // Log the assertion failure but continue with the test
-			            System.out.println("Assertion failed: " + e.getMessage());
-			        }
-		
-//		 try {
-// 	        String s = getText(By.xpath("//div//h1"));
-// 	        soft.assertEquals("Employee Loginllll", s);
-// 	    } catch (AssertionError e) {
-// 	    	
-// 	        soft.fail("Employee Login Menu Assertion Failure");
-// 	    }
+
+			String s = getText(By.xpath("//div//h1"));
+			soft.assertEquals("Employee Loginllll", s);
+			soft.assertAll();
+		} catch (AssertionError e) {
+			// Log the assertion failure but continue with the test
+			System.out.println("Assertion failed: " + e.getMessage());
+		}
+
 	}
-//    private byte[] captureScreenshot() {
-//        try {
-//            // Capture a screenshot using your WebDriver instance
-//            TakesScreenshot ts = (TakesScreenshot) driver;
-//            return ts.getScreenshotAs(OutputType.BYTES);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            return null; // Handle exceptions as needed
-//        }
-//    }
-	@Then("Click Customer Login")
-	public void click_Customer_Login() {
+	@Then("I click Customer Login menu")
+	public void i_click_Customer_Login_menu() {
 		click(By.xpath("//a[@href=\"clogin.php\"]"));
 		String customerLogin= getText(By.xpath("//div/h1"));
 		assertEquals("Customer Login", customerLogin);	
@@ -91,7 +74,7 @@ public class Login_Functionality_Verification extends Base{
 
 	@Then("I enter User Id {string}")
 	public void i_enter_User_Id(String string) {
-		
+
 		sendKeys(By.name("mailuid"),string);
 		System.out.println("enter user ID");
 	}
@@ -100,25 +83,7 @@ public class Login_Functionality_Verification extends Base{
 	public void i_enter_Password(String string) {
 		sendKeys(By.name("pwd"),string);
 	}
-	
-	  // @When("I enter my username and password")
-	  //   public void iEnterUsernameAndPassword() {
-	  //       String username = System.getProperty("username");
-	  //       String password = System.getProperty("password");
 
-	  //       sendKeys(By.name("mailuid"), username);
-			// sendKeys(By.name("pwd"), password);
-	        
-	        
-	  //       // Use the username and password obtained from system properties
-	  //       System.out.println("Username: " + username);
-	  //       System.out.println("Password: " + password);
-
-	  //   }
-	
-	
-	
-	
 	@When("I click Login Button")
 	public void i_click_Login_Button() {
 	    click(By.xpath("//input[@name=\"login-submit\"]"));
